@@ -61328,16 +61328,12 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var ionic_1 = __webpack_require__(6);
-	var page1_1 = __webpack_require__(354);
-	var page2_1 = __webpack_require__(355);
-	var page3_1 = __webpack_require__(356);
+	var inbox_1 = __webpack_require__(354);
 	var TabsPage = (function () {
 	    function TabsPage() {
 	        // this tells the tabs component which Pages
 	        // should be each tab's root Page
-	        this.tab1Root = page1_1.Page1;
-	        this.tab2Root = page2_1.Page2;
-	        this.tab3Root = page3_1.Page3;
+	        this.tab1Root = inbox_1.PageInbox;
 	    }
 	    TabsPage = __decorate([
 	        ionic_1.Page({
@@ -61365,106 +61361,182 @@
 	};
 	var ionic_1 = __webpack_require__(6);
 	var ionic_2 = __webpack_require__(6);
-	var Page1 = (function () {
-	    function Page1(nav) {
+	var PageInbox = (function () {
+	    function PageInbox(nav) {
 	        this.nav = nav;
+	        this.todayMessages = [
+	            {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            },
+	            {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }
+	        ];
+	        this.yesterdayMessages = [
+	            {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            },
+	            {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }, {
+	                name: 'Gollum',
+	                title: 'The message title',
+	                image: 'images/yuna.jpg',
+	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	            }
+	        ];
 	    }
-	    Page1.prototype.presentContactModal = function () {
+	    PageInbox.prototype.presentContactModal = function () {
 	        var contactModal = ionic_2.Modal.create(ContactUs);
 	        this.nav.present(contactModal);
 	    };
-	    Page1.prototype.openModal = function () {
-	        var modal = ionic_2.Modal.create(MyModal);
+	    PageInbox.prototype.openModal = function (message) {
+	        var modal = ionic_2.Modal.create(MyModal, { message: message });
 	        this.nav.present(modal);
 	    };
-	    Page1 = __decorate([
+	    PageInbox = __decorate([
 	        ionic_1.Page({
-	            templateUrl: 'build/pages/page1/page1.html',
+	            templateUrl: 'build/pages/inbox/inbox.html',
 	        }), 
 	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object])
-	    ], Page1);
-	    return Page1;
+	    ], PageInbox);
+	    return PageInbox;
 	    var _a;
 	})();
-	exports.Page1 = Page1;
+	exports.PageInbox = PageInbox;
 	var MyModal = (function () {
-	    function MyModal(viewCtrl) {
-	        var avatar = {
-	            name: 'Gollum',
-	            title: 'The message title',
-	            image: 'images/yuna.jpg',
-	            message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	        };
-	        this.avatar = avatar;
+	    function MyModal(viewCtrl, params) {
+	        this.message = params.data.message;
 	        this.dismissModal = function () {
 	            viewCtrl.dismiss();
 	        };
 	    }
 	    MyModal = __decorate([
 	        ionic_1.Page({
-	            templateUrl: 'build/pages/page1/modal-content.html',
+	            templateUrl: 'build/pages/inbox/modal-content.html',
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.ViewController !== 'undefined' && ionic_2.ViewController) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.ViewController !== 'undefined' && ionic_2.ViewController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.NavParams !== 'undefined' && ionic_2.NavParams) === 'function' && _b) || Object])
 	    ], MyModal);
 	    return MyModal;
-	    var _a;
+	    var _a, _b;
 	})();
-
-
-/***/ },
-/* 355 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var ionic_1 = __webpack_require__(6);
-	var Page2 = (function () {
-	    function Page2() {
-	    }
-	    Page2 = __decorate([
-	        ionic_1.Page({
-	            templateUrl: 'build/pages/page2/page2.html',
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], Page2);
-	    return Page2;
-	})();
-	exports.Page2 = Page2;
-
-
-/***/ },
-/* 356 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	var ionic_1 = __webpack_require__(6);
-	var Page3 = (function () {
-	    function Page3() {
-	    }
-	    Page3 = __decorate([
-	        ionic_1.Page({
-	            templateUrl: 'build/pages/page3/page3.html'
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], Page3);
-	    return Page3;
-	})();
-	exports.Page3 = Page3;
 
 
 /***/ }

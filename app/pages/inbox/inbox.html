@@ -1,0 +1,33 @@
+<ion-navbar *navbar hideBackButton class="show-navbar android-attr">
+  <button menuToggle>
+    <ion-icon name='menu'></ion-icon>
+  </button>
+  <ion-title>Inbox</ion-title>
+</ion-navbar>
+
+<ion-content class="has-header demo-list-icons">
+  <ion-list>
+
+    <ion-list-header>Today</ion-list-header>
+
+    <a ion-item (click)="openModal(message)" *ngFor='#message of todayMessages'>
+      <ion-avatar item-left>
+        <img src="{{message.image}}">
+      </ion-avatar>
+      <h2>{{message.name}}</h2>
+      <p>{{message.title}}</p>
+    </a>
+
+    <ion-list-header>Yesterday</ion-list-header>
+
+    <a ion-item (click)="openModal(message)" *ngFor='#message of yesterdayMessages'>
+      <ion-avatar item-left>
+        <img src="{{message.image}}">
+      </ion-avatar>
+      <h2>{{message.name}}</h2>
+      <p>{{message.title}}</p>
+    </a>
+
+  </ion-list>
+
+</ion-content>

@@ -18,17 +18,24 @@
 
         <ion-item>
             <ion-avatar item-left>
-                <img src="{{avatar.image}}">
+                <img src="{{message.image}}">
             </ion-avatar>
-            <h2>{{avatar.name}}</h2>
+            <h2>{{message.name}}</h2>
         </ion-item>
 
-        <ion-item>
-            <h4>{{avatar.title}}</h4>
-        </ion-item>
-        <ion-item>
-            {{avatar.message}}
-        </ion-item>
+        <ion-card>
+            <img src="/images/sample-1.jpg">
+            <ion-card-header>
+                {{message.title}}
+            </ion-card-header>
+
+            <ion-card-content>
+                {{message.message}}
+            </ion-card-content>
+
+        </ion-card>
+
+
 
 
     </ion-list>
