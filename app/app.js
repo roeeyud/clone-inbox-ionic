@@ -2,6 +2,7 @@ import {App, Platform, Config} from 'ionic/ionic';
 import {TabsPage} from './pages/tabs/tabs';
 
 
+
 @App({
   templateUrl: 'build/app.html',
   // Check out the config API docs for more info
@@ -11,7 +12,7 @@ import {TabsPage} from './pages/tabs/tabs';
 export class MyApp {
   constructor(platform: Platform) {
     this.root = TabsPage;
-
+    this.platform = platform;
     platform.ready().then(() => {
       // Do any necessary cordova or native calls here now that the platform is ready
     });

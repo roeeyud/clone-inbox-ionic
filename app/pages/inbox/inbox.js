@@ -1,5 +1,5 @@
 import {Page} from 'ionic/ionic';
-import {Modal, NavController, ViewController, NavParams} from 'ionic/ionic';
+import {Modal, Platform, NavController, ViewController, NavParams} from 'ionic/ionic';
 
 @Page({
   templateUrl: 'build/pages/inbox/inbox.html',
@@ -165,7 +165,11 @@ export class PageInbox {
 })
 
 class MyModal {
-  constructor(viewCtrl: ViewController,  params: NavParams) {
+  constructor(viewCtrl: ViewController,  params: NavParams, platform: Platform) {
+    if(platform.is('android'){
+      this.currentPlatform = 'android'
+    }
+    this.currentPlatform = 'android'
     this.message = params.data.message;
     this.dismissModal = function () {
       viewCtrl.dismiss();

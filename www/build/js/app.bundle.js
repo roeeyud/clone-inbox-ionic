@@ -3218,6 +3218,7 @@
 	var MyApp = (function () {
 	    function MyApp(platform) {
 	        this.root = tabs_1.TabsPage;
+	        this.platform = platform;
 	        platform.ready().then(function () {
 	            // Do any necessary cordova or native calls here now that the platform is ready
 	        });
@@ -61522,7 +61523,11 @@
 	})();
 	exports.PageInbox = PageInbox;
 	var MyModal = (function () {
-	    function MyModal(viewCtrl, params) {
+	    function MyModal(viewCtrl, params, platform) {
+	        if (platform.is('android')) {
+	            this.currentPlatform = 'android';
+	        }
+	        this.currentPlatform = 'android';
 	        this.message = params.data.message;
 	        this.dismissModal = function () {
 	            viewCtrl.dismiss();
@@ -61532,10 +61537,10 @@
 	        ionic_1.Page({
 	            templateUrl: 'build/pages/inbox/modal-content.html',
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.ViewController !== 'undefined' && ionic_2.ViewController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.NavParams !== 'undefined' && ionic_2.NavParams) === 'function' && _b) || Object])
+	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.ViewController !== 'undefined' && ionic_2.ViewController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.NavParams !== 'undefined' && ionic_2.NavParams) === 'function' && _b) || Object, (typeof (_c = typeof ionic_2.Platform !== 'undefined' && ionic_2.Platform) === 'function' && _c) || Object])
 	    ], MyModal);
 	    return MyModal;
-	    var _a, _b;
+	    var _a, _b, _c;
 	})();
 
 
