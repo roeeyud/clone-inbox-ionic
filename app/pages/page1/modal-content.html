@@ -1,0 +1,36 @@
+<ion-toolbar class="android-attr">
+    <ion-title>
+        Description
+    </ion-title>
+    <ion-buttons start>
+        <button (click)="dismissModal()" clear *ngIf=" currentPlatform === 'ios' || currentPlatform !== 'android' ">
+            <span primary>Cancel</span>
+        </button>
+        <button (click)="dismissModal()" clear *ngIf=" currentPlatform === 'android' " style="color: #fff; margin-right: 10px">
+            <ion-icon name='close'></ion-icon>
+        </button>
+    </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="has-header">
+
+    <ion-list>
+
+        <ion-item>
+            <ion-avatar item-left>
+                <img src="{{avatar.image}}">
+            </ion-avatar>
+            <h2>{{avatar.name}}</h2>
+        </ion-item>
+
+        <ion-item>
+            <h4>{{avatar.title}}</h4>
+        </ion-item>
+        <ion-item>
+            {{avatar.message}}
+        </ion-item>
+
+
+    </ion-list>
+
+</ion-content>
