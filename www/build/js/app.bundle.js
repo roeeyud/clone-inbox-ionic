@@ -61363,144 +61363,96 @@
 	var ionic_1 = __webpack_require__(6);
 	var ionic_2 = __webpack_require__(6);
 	var PageInbox = (function () {
-	    function PageInbox(nav) {
+	    function PageInbox(nav, app) {
 	        this.nav = nav;
-	        this.todayMessages = [
+	        this.app = app;
+	        this.messageGroups = [
 	            {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                title: 'today',
+	                messages: [
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    },
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    },
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    },
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }
+	                ]
 	            },
 	            {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }
-	        ];
-	        this.yesterdayMessages = [
-	            {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                title: 'yesterday',
+	                messages: [
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    },
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }, {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }
+	                ]
 	            },
 	            {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
-	            }, {
-	                name: 'Gollum',
-	                title: 'The message title',
-	                image: 'images/yuna.jpg',
-	                message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                title: 'Snoozed',
+	                messages: [
+	                    {
+	                        name: 'Gollum',
+	                        title: 'The message title',
+	                        image: 'images/yuna.jpg',
+	                        message: 'This could be a very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long message'
+	                    }
+	                ]
 	            }
 	        ];
 	    }
@@ -61512,14 +61464,62 @@
 	        var modal = ionic_2.Modal.create(MyModal, { message: message });
 	        this.nav.present(modal);
 	    };
+	    PageInbox.prototype.presentPrompt = function (item, group) {
+	        var _this = this;
+	        debugger;
+	        this.app.getComponent('data-list').closeSlidingItems();
+	        var alert = ionic_2.Alert.create({
+	            title: 'Snooze',
+	            inputs: [
+	                {
+	                    name: 'snoozeTime',
+	                    placeholder: 'Days to snooze',
+	                    type: 'number'
+	                }
+	            ],
+	            buttons: [
+	                {
+	                    text: 'Cancel',
+	                    handler: function (data) {
+	                        console.log('Cancel clicked');
+	                    }
+	                },
+	                {
+	                    text: 'Confirm',
+	                    handler: function (data) {
+	                        setTimeout(function () {
+	                            _this.addToSnooze(item);
+	                            _this.removeItem(item, group);
+	                        }, 300);
+	                    }
+	                }
+	            ]
+	        });
+	        this.nav.present(alert);
+	    };
+	    PageInbox.prototype.removeItem = function (item, group) {
+	        for (var i = 0; i < group.messages.length; i++) {
+	            if (group.messages[i] === item) {
+	                group.messages.splice(i, 1);
+	                return;
+	            }
+	        }
+	    };
+	    PageInbox.prototype.addToSnooze = function (item) {
+	        for (var i = 0; i < this.messageGroups.length; i++) {
+	            if (this.messageGroups[i].title === 'Snoozed') {
+	                this.messageGroups[i].messages.push(item);
+	            }
+	        }
+	    };
 	    PageInbox = __decorate([
 	        ionic_1.Page({
 	            templateUrl: 'build/pages/inbox/inbox.html',
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object])
+	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.IonicApp !== 'undefined' && ionic_2.IonicApp) === 'function' && _b) || Object])
 	    ], PageInbox);
 	    return PageInbox;
-	    var _a;
+	    var _a, _b;
 	})();
 	exports.PageInbox = PageInbox;
 	var MyModal = (function () {

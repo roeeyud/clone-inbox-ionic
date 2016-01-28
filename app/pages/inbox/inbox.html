@@ -6,27 +6,30 @@
 </ion-navbar>
 
 <ion-content class="has-header demo-list-icons">
-  <ion-list>
+  <ion-list id="data-list">
 
-    <ion-list-header>Today</ion-list-header>
-
-    <a ion-item (click)="openModal(message)" *ngFor='#message of todayMessages'>
-      <ion-avatar item-left>
-        <img src="{{message.image}}">
-      </ion-avatar>
-      <h2>{{message.name}}</h2>
-      <p>{{message.title}}</p>
-    </a>
-
-    <ion-list-header>Yesterday</ion-list-header>
-
-    <a ion-item (click)="openModal(message)" *ngFor='#message of yesterdayMessages'>
-      <ion-avatar item-left>
-        <img src="{{message.image}}">
-      </ion-avatar>
-      <h2>{{message.name}}</h2>
-      <p>{{message.title}}</p>
-    </a>
+    <div *ngFor='#group of messageGroups'>
+      <ion-list-header>{{group.title}}</ion-list-header>
+      <ion-item-sliding *ngFor='#message of group.messages'>
+        <ion-item  (click)="openModal(message)">
+          <ion-avatar item-left>
+            <img src="{{message.image}}">
+          </ion-avatar>
+          <h2>{{message.name}}</h2>
+          <p>{{message.title}}</p>
+        </ion-item>
+        <ion-item-options>
+          <button light (click)="presentPrompt(message, group)">
+            Snooze
+            <ion-icon name="alarm"></ion-icon>
+          </button>
+          <button danger (click)="removeItem(message, group)">
+            Remove
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
 
   </ion-list>
 

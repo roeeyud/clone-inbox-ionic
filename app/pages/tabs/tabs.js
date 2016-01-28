@@ -1,5 +1,6 @@
 import {Page} from 'ionic/ionic';
 import {PageInbox} from '../inbox/inbox';
+import {Dialog} from '../inbox/dialog'
 
 
 @Page({

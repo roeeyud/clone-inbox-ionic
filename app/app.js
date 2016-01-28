@@ -17,4 +17,6 @@ export class MyApp {
       // Do any necessary cordova or native calls here now that the platform is ready
     });
   }
+
+
 }
