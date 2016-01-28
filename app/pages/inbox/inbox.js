@@ -7,8 +7,9 @@ import {Modal, Platform, NavController, Alert, ViewController, NavParams, IonicA
 
 
 export class PageInbox {
-  constructor(nav: NavController, app: IonicApp) {
+  constructor(nav: NavController, app: IonicApp, platform: Platform) {
     this.nav = nav;
+    this.platform = platform;
     this.app = app;
     this.messageGroups = [
       {
@@ -111,6 +112,14 @@ export class PageInbox {
     this.nav.present(modal)
   }
 
+  showToast(message) {
+    this.platform.ready().then(() => {
+      if (window.plugins && window.plugins.toast){
+        window.plugins.toast.show(message, "short", 'bottom');
+      }
+    });
+  }
+
   presentPrompt(item, group) {
     debugger;
     this.app.getComponent('data-list').closeSlidingItems();
@@ -134,8 +143,14 @@ export class PageInbox {
         text: 'Confirm',
         handler: data => {
           setTimeout(() => {
+            this.showToast('Message Snoozed');
             this.addToSnooze(item);
-            this.removeItem(item, group);
+            for (var i = 0; i < group.messages.length; i++) {
+              if (group.messages[i] === item) {
+                group.messages.splice(i, 1);
+                return;
+              }
+            }
           }, 300);
         }
       }
@@ -148,6 +163,7 @@ export class PageInbox {
     for (var i = 0; i < group.messages.length; i++) {
       if (group.messages[i] === item) {
         group.messages.splice(i, 1);
+        this.showToast('Message Removed');
         return;
       }
     }
