@@ -61363,8 +61363,9 @@
 	var ionic_1 = __webpack_require__(6);
 	var ionic_2 = __webpack_require__(6);
 	var PageInbox = (function () {
-	    function PageInbox(nav, app) {
+	    function PageInbox(nav, app, platform) {
 	        this.nav = nav;
+	        this.platform = platform;
 	        this.app = app;
 	        this.messageGroups = [
 	            {
@@ -61464,6 +61465,16 @@
 	        var modal = ionic_2.Modal.create(MyModal, { message: message });
 	        this.nav.present(modal);
 	    };
+	    PageInbox.prototype.showToast = function (message) {
+	        this.platform.ready().then(function () {
+	            if (window.plugins && window.plugins.toast) {
+	                window.plugins.toast.show(message, "short", 'bottom');
+	            }
+	        });
+	    };
+	    PageInbox.prototype.clearAllGroup = function (group) {
+	        group.messages = [];
+	    };
 	    PageInbox.prototype.presentPrompt = function (item, group) {
 	        var _this = this;
 	        debugger;
@@ -61488,8 +61499,14 @@
 	                    text: 'Confirm',
 	                    handler: function (data) {
 	                        setTimeout(function () {
+	                            _this.showToast('Message Snoozed');
 	                            _this.addToSnooze(item);
-	                            _this.removeItem(item, group);
+	                            for (var i = 0; i < group.messages.length; i++) {
+	                                if (group.messages[i] === item) {
+	                                    group.messages.splice(i, 1);
+	                                    return;
+	                                }
+	                            }
 	                        }, 300);
 	                    }
 	                }
@@ -61501,6 +61518,7 @@
 	        for (var i = 0; i < group.messages.length; i++) {
 	            if (group.messages[i] === item) {
 	                group.messages.splice(i, 1);
+	                this.showToast('Message Removed');
 	                return;
 	            }
 	        }
@@ -61516,10 +61534,10 @@
 	        ionic_1.Page({
 	            templateUrl: 'build/pages/inbox/inbox.html',
 	        }), 
-	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.IonicApp !== 'undefined' && ionic_2.IonicApp) === 'function' && _b) || Object])
+	        __metadata('design:paramtypes', [(typeof (_a = typeof ionic_2.NavController !== 'undefined' && ionic_2.NavController) === 'function' && _a) || Object, (typeof (_b = typeof ionic_2.IonicApp !== 'undefined' && ionic_2.IonicApp) === 'function' && _b) || Object, (typeof (_c = typeof ionic_2.Platform !== 'undefined' && ionic_2.Platform) === 'function' && _c) || Object])
 	    ], PageInbox);
 	    return PageInbox;
-	    var _a, _b;
+	    var _a, _b, _c;
 	})();
 	exports.PageInbox = PageInbox;
 	var MyModal = (function () {

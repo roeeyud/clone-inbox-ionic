@@ -120,6 +120,10 @@ export class PageInbox {
     });
   }
 
+  clearAllGroup(group) {
+    group.messages = [];
+  }
+
   presentPrompt(item, group) {
     debugger;
     this.app.getComponent('data-list').closeSlidingItems();

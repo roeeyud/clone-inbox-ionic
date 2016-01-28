@@ -9,7 +9,12 @@
   <ion-list id="data-list">
 
     <div *ngFor='#group of messageGroups'>
-      <ion-list-header>{{group.title}}</ion-list-header>
+      <ion-list-header (click)="clearAllGroup(group)">
+        {{group.title}}
+        <button clear fab-right>
+          <ion-icon name="done-all"></ion-icon>
+        </button>
+      </ion-list-header>
       <ion-item-sliding *ngFor='#message of group.messages'>
         <ion-item  (click)="openModal(message)">
           <ion-avatar item-left>
